@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --bg-color: #fdfdfd;
+    --text-color: #0b061f;
+    --main-color: #2a2185;
+    --white-color: #fdfdfd;
+    --shadow-color: rgba(0, 0, 0, .2);
+}
+
+.dark-mode {
+    --bg-color: #0b061f;
+    --text-color: #fdfdfd;
+    --shadow-color: rgba(0, 0, 0, .7);
+}
+.dark-mode .inp:focus{
+    background: #fff;
+    transform: scale(1.1);
+    color: #000;
+}
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+#darkMode-icon {
+    font-size: 2.4rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.contenue{
+    width: 90%;
+    margin: auto;
+}
+.head{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+.inp{
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: none;
+    background: #333;
+    margin: 10px 0;
+    border-radius: 4px;
+    padding: 4px;
+    color: #fff;
+}
+.inp:focus{
+    background: #000;
+    transform: scale(1.1);
+}
+.price .inp{
+    width: 20%;
+}
+#total{
+    background: #a00d02;
+    padding: 5px 2px;
+    border-radius: 4px;
+    color: #fff;
+}
+#total::before{
+    content: 'Total: ';
+}
+.btn{
+    width: 100%;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background: #2a2185;
+    color: #fff;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.btn:hover{
+    background: #5a4de2;
+    letter-spacing: 1px;
+}
+button{
+    margin: 0 0 0 10px;
+    cursor: pointer;
+    color: #5a4de2;
+}
+.btnV{
+    width: 50px;
+    height: 25px;
+    border: none;
+    cursor: pointer;
+    background: #2a2185;
+    color: #fff;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.btnV:hover{
+    background: #5a4de2;
+    letter-spacing: 1px;
+}
+#deleteAll{
+    margin: 20px 0;
+}
+.btnSearch{
+    display: flex;
+    justify-content: space-between;
+}
+.btnSearch button{
+    width: 45%;
+}
+table{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+table th{
+    text-transform: uppercase;
+}
+th,td{
+    padding: 5px;
+}
+.ma{
+    margin: 0 10px 0 0;
+    color: #a00d02;
+    text-transform: uppercase;
+}
+.ma-f{
+    margin: 0 10px 0 0;
+    color: #2a2185;
+    text-transform: uppercase;
+}
+.pagination{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.PN{
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, tr, th, td {
+        display: block;
+    }
+}

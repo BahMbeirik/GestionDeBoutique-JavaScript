@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceil</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  
+  <link rel="stylesheet" href="stocks.css">
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<div class="container" id="nav-bar">
+<!-- =============== Side bar ================== -->
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon"><img src="images/Logo.jpg" alt="" class="P"></span>
+                    <h2 class="title"><span class="ma">Ma</span>Boutique</h2>
+                </a>
+            </li>
+            <li>
+                <a id="acceil">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="title">Acceil</span>
+                </a>
+            </li>
+            <li>
+                <a id="stockes">
+                    <span class="icon material-symbols-outlined">inventory_2</span>
+                    <span class="title">Les stockes</span>
+                </a>
+            </li>
+            <li>
+                <a id="ventes">
+                    <span class="icon material-symbols-outlined">shopping_cart_checkout</span>
+                    <span class="title">Les ventes</span>
+                </a>
+            </li>
+            <li>
+                <a id="finance">
+                    <span class="icon material-symbols-outlined">finance_chip</span>
+                    <span class="title">Opérations financiéres</span>
+                </a>
+            </li>
+            <li>
+                <a id="logout">
+                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class="title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ====================== Main ======================= -->
+    <div class="main">
+        <!-- =====================topbar==================== -->
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+
+            <div class="search">
+                <label>
+                    <input class="rech" onkeyup="searchData(this.value)" type="text" id="search" placeholder="Recherche">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+
+            <div class="user">
+                <!-- <img src="images/photo.png" alt=""> -->
+                <div class="bx bx-moon" id="darkMode-icon"></div>
+            </div>
+        </div>
+
+        <!-- ============= Contenus du page  ============-->
+        <div class="contenue">
+            <div class="head">
+                <!-- <h2><span class="ma">Ma</span>Boutique</h2> -->
+            </div>
+    
+            <div class="inputs" id="inputs">
+                <input class="inp" type="text" id="titer" placeholder="titre">
+                <div class="price">
+                    <input class="inp" onkeyup="getTotal()" type="number" id="price" placeholder="prix">
+                    <input class="inp" onkeyup="getTotal()" type="number" id="taxes" placeholder="impôts">
+                    <input class="inp" onkeyup="getTotal()" type="number" id="ads" placeholder="publicités">
+                    <input class="inp" onkeyup="getTotal()" type="number" id="discount" placeholder="réductions">
+                    <small id="total"></small>
+                </div>
+                <input class="inp" type="number" id="count" placeholder="Compter">
+                <input class="inp" type="text" id="catagory" placeholder="catégorie">
+                <button class="btn" id="submit">Create</button>
+            </div>
+    
+            <div class="outputs" id="outputs">
+                <div class="searchBlock">
+                    <div class="btnSearch">
+                        <button class="btn" onclick="getSearchMode(this.id)" id="searchTiter">Recherche par Titre</button>
+                        <button class="btn" onclick="getSearchMode(this.id)" id="searchCatagory">Recherche par Catégorie</button>
+                    </div>
+                </div>
+                <div id="deleteAll"></div>
+                <div class="tb">
+                    <table id="contentTable" class="tb">
+                        <tr>
+                            <th>id</th>
+                            <th>titre</th>
+                            <th>prix</th>
+                            <th>impôts</th>
+                            <th>publicités</th>
+                            <th>réductions</th>
+                            <th>total</th>
+                            <th>catégorie</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tbody id="tbody"></tbody>
+                    </table>
+                </div>
+                
+                <div class="pagination">
+                    <div class="PN">
+                        <b onclick="prevPage()"  id="btn_prev">&laquo; Previous</b>
+                        <b onclick="nextPage()"  id="btn_next">Next &raquo;</b>
+                    </div>
+                    <div>
+                        <b>page: <span id="page"></span></b>
+                    </div>
+                </div>
+                    
+            </div>
+            <!-- =========================stocks ============================== -->
+            <div id="tb">
+                <table id="contentTable" class="tb">
+                    <tr>
+                        <th>id</th>
+                        <th>titre</th>
+                        <th>prix</th>
+                        <th>impôts</th>
+                        <th>publicités</th>
+                        <th>réductions</th>
+                        <th>total</th>
+                        <th>catégorie</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tbody id="tbody2"></tbody>
+                </table>
+            </div>
+            <!-- ============================ventes= ======================= -->
+            <div id="destination">
+                <table id="contentTable" class="tb">
+                    <tr>
+                        <th>id</th>
+                        <th>titre</th>
+                        <th>prix</th>
+                        <th>impôts</th>
+                        <th>publicités</th>
+                        <th>réductions</th>
+                        <th>total</th>
+                        <th>catégorie</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tbody id="tbody3"></tbody>
+                </table>
+            </div>
+            <!-- ============================ Opérations financiéres ======================= -->
+            <div id="of">
+                <div class="head">
+                    <h2><span class="ma">Opérations </span><span class="ma-f">financiéres</span></h2>
+                </div>
+                <div class="op">
+                    <div id="ach"></div>
+                    <div id="vet"></div>
+                </div>
+                <div class="TOF">
+                    <div id="TOF"></div>
+                </div>
+                
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- ============= Script ================ -->
+<script  src="navbar.js"></script>
+<script src="stocks.js"></script>
+<!-- ============== ionicon ============= -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+</html>

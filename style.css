@@ -1,0 +1,562 @@
+ /* ========= Gogle Fonts ========== */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+*{
+    /* font-family: 'Ubuntu', sans-serif; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #fdfdfd;
+    --text-color: #0b061f;
+    --main-color: #2a2185;
+    --white-color: #fdfdfd;
+    --shadow-color: rgba(0, 0, 0, .2);
+
+    --blue: #2a2185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --balack2: #999;
+}
+
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #222;
+}
+
+.ring {
+    margin-top: 5%;
+    margin-left: 30%;
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ring i {
+  position: absolute;
+  inset: 0;
+  border: 2px solid #fff;
+  transition: 0.5s;
+}
+.ring i:nth-child(1) {
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  animation: animate 6s linear infinite;
+}
+.ring i:nth-child(2) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate 4s linear infinite;
+}
+.ring i:nth-child(3) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate2 10s linear infinite;
+}
+.ring:hover i {
+  border: 6px solid var(--clr);
+  filter: drop-shadow(0 0 20px var(--clr));
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate2 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.login {
+  position: absolute;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.login h2 {
+  font-size: 2em;
+  color: #fff;
+}
+.login .inputBx {
+  position: relative;
+  width: 100%;
+  margin: 10px;
+}
+.login .inputBx input {
+  position: relative;
+  width: 100%;
+  padding: 10px 20px;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  font-size: 1.2em;
+  color: #fff;
+  box-shadow: none;
+  outline: none;
+}
+.login .inputBx input[type="submit"] {
+  width: 100%;
+  background: #0078ff;
+  background: linear-gradient(45deg, #ff357a, #fff172);
+  border: none;
+  cursor: pointer;
+}
+.login .inputBx input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+.login .links {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.login .links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#login-error-msg {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #8a0000;
+    opacity: 0;
+  }
+#login-vide{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #8a0000;
+    opacity: 0;
+}
+
+
+
+
+
+/* =========== Navigation =============== */
+
+.container{
+  position: relative;
+  width: 100%;
+}
+
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active{
+    width: 80px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius:30px ;
+}
+.navigation ul li:hover,
+.navigation ul li.hovered{
+    background-color: var(--white);
+}
+.dark-mode .navigation ul li:hover,
+.dark-mode .navigation ul li.hovered{
+    background-color: #0b061f;
+}
+
+.navigation ul li:nth-child(1){
+    /* margin-top: 10px; */
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a{
+    color: var(--blue);
+}
+.dark-mode .navigation ul li:hover a,
+.dark-mode .navigation ul li.hovered a {
+  color: var(--white);
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+.navigation ul li a .icon ion-icon{
+    font-size: 1.75rem;
+}
+.P{
+    top: 8px;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+/* =============== curve outside ============= */
+
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before{
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+.dark-mode .navigation ul li:hover a::before,
+.dark-mode .navigation ul li.hovered a::before {
+  box-shadow: 35px 35px 0 10px  #0b061f;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after{
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+.dark-mode .navigation ul li:hover a::after,
+.dark-mode .navigation ul li.hovered a::after {
+  box-shadow: 35px -35px 0 10px   #0b061f;
+}
+
+
+
+
+/* ======================= Main ===================== */
+.main{
+    position: absolute; 
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    /* background: var(--white); */
+    transition: 0.5s;
+}
+.main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label{
+    position: relative;
+    width: 100%;
+}
+
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--balack2);
+}
+
+.search label ion-icon{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2rem;
+}
+
+.user{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===================Ventes======================= */
+
+.dark-mode {
+  --bg-color: #0b061f;
+  --text-color: #fdfdfd;
+  --shadow-color: rgba(0, 0, 0, .7);
+}
+.dark-mode .inp:focus{
+  background: #fff;
+  transform: scale(1.1);
+  color: #000;
+}
+
+#darkMode-icon {
+  font-size: 2.4rem;
+  color: #2a2185;
+  cursor: pointer;
+}
+
+.contenue{
+  width: 90%;
+  margin: auto;
+}
+.head{
+  text-align: center;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+.inp{
+  width: 100%;
+  height: 30px;
+  outline: none;
+  border: none;
+  background: #333;
+  margin: 10px 0;
+  border-radius: 4px;
+  padding: 4px;
+  color: #fff;
+}
+.inp:focus{
+  background: #000;
+  transform: scale(1.1);
+}
+.price .inp{
+  width: 20%;
+}
+#total{
+  background: #a00d02;
+  padding: 5px 2px;
+  border-radius: 4px;
+  color: #fff;
+}
+#total::before{
+  content: 'Total: ';
+}
+.btn{
+  width: 100%;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  background: #2a2185;
+  color: #fff;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+.btn:hover{
+  background: #5a4de2;
+  letter-spacing: 1px;
+}
+button{
+  margin: 0 10px 0 0;
+  cursor: pointer;
+  color: #5a4de2;
+}
+#deleteAll{
+  margin: 20px 0;
+}
+.btnSearch{
+  display: flex;
+  justify-content: space-between;
+}
+.btnSearch button{
+  width: 45%;
+}
+table{
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+table th{
+  text-transform: uppercase;
+}
+th,td{
+  padding: 5px;
+}
+.ma{
+  margin: 0 10px 0 0;
+  color: #a00d02;
+  text-transform: uppercase;
+}
+.pagination{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.PN{
+  color: var(--main-color);
+  cursor: pointer;
+}
+/* ============================ Opérations financiéres ======================= */
+#of{
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.op{
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  text-align: center;
+  margin-top: 50px;
+}
+.TOF{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  text-align: center;
+}
+#ach{
+  border-radius: 15px;
+  background-color: #2a2185;
+  width: 30%;
+  height: 40px;
+  color: white;
+  margin-right: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  display: flex;
+}
+#vet{
+  border-radius: 15px;
+  background-color:#a00d02;
+  width: 30%;
+  height: 40px;
+  color: white;
+  margin-left: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  display: flex;
+}
+#TOF{
+  border-radius: 15px;
+  background-color:forestgreen;
+  width: 30%;
+  height: 50px;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, tr, th, td {
+      display: block;
+  }
+}
+
